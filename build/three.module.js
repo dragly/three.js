@@ -18731,7 +18731,7 @@ function WebGLPrograms( renderer, extensions, capabilities ) {
 			index0AttributeName: material.index0AttributeName,
 
 			extensionDerivatives: material.extensions && material.extensions.derivatives,
-			extensionFragDepth: material.extensions && material.extensions.frawbuffers,
+			extensionFragDepth: material.extensions && material.extensions.fragDepth,
 			extensionDrawbuffers: material.extensions && material.extensions.drawbuffers,
 			extensionShaderTextureLOD: material.extensions && material.extensions.shaderTextureLOD,
 
@@ -43129,7 +43129,7 @@ Object.assign( PropertyBinding, {
 
 	findNode: function ( root, nodeName ) {
 
-		if ( ! nodeName || nodeName === "" || nodeName === "root" || nodeName === "." || nodeName === - 1 || nodeName === root.name || nodeName === root.uuid ) {
+		if ( ! nodeName || nodeName === "" || nodeName === "." || nodeName === - 1 || nodeName === root.name || nodeName === root.uuid ) {
 
 			return root;
 
@@ -46356,6 +46356,8 @@ function SkeletonHelper( object ) {
 
 SkeletonHelper.prototype = Object.create( LineSegments.prototype );
 SkeletonHelper.prototype.constructor = SkeletonHelper;
+
+SkeletonHelper.prototype.isSkeletonHelper = true;
 
 SkeletonHelper.prototype.updateMatrixWorld = function ( force ) {
 
